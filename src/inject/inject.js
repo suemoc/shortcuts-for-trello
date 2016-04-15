@@ -41,6 +41,9 @@ chrome.extension.sendMessage({}, function() {
         case 'newboard':
           newBoard();
         break;
+        case 'focuscard':
+          focusCard();
+        break;
     }
   }
 
@@ -110,6 +113,11 @@ chrome.extension.sendMessage({}, function() {
     if(cardList){
       cardList.scrollTop(cardList.height() + 500); //Just to make sure we get the entire height
     }
+  }
+
+  function focusCard() {
+    card.removeClass('active-card');
+    $(".list-card").eq(0).addClass('active-card')
   }
 
   function flashMessage(card, message){
