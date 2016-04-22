@@ -42,6 +42,9 @@
     "movecardup": {
       "description": "Move card to top"
     },
+    "movecardbottom": {
+      "description": "Move card to bottom"
+    },
     "notifications": {
       "description": "Show notifications"
     },

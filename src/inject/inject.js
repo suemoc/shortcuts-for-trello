@@ -26,6 +26,9 @@ chrome.extension.sendMessage({}, function() {
         case 'movecardup':
           moveCardUp();
         break;
+        case 'movecardbottom':
+          moveCardBottom();
+        break;
         case 'notifications':
           notifications();
         break;
@@ -91,6 +94,16 @@ chrome.extension.sendMessage({}, function() {
 
     elm.click();
     $('.js-select-position').children().first().attr('selected', 'selected');
+    $('input[value="Move"]').click();
+  }
+
+  function moveCardBottom() {
+    if(card.length !== 1) return;
+
+    card.find('span.list-card-operation').trigger('click');
+    elm = document.querySelector('a.js-move-card');
+    elm.click();
+    $('.js-select-position').children().last().attr('selected', 'selected');
     $('input[value="Move"]').click();
   }
 
